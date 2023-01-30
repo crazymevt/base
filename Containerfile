@@ -9,7 +9,7 @@ COPY ublue-firstboot /usr/bin
 
 RUN rpm-ostree override remove firefox firefox-langpacks && \
     rpm-ostree install distrobox gnome-tweaks just protonvpn libappindicator-gtk3 microsoft-edge-dev \
-        openrgb openrgb-udev-rules rclone sshfs virt-manager wireguard-tools zsh && \
+        openrgb openrgb-udev-rules rclone sshfs wireguard-tools zsh && \
     ostree container commit
 
 # RUN chmod -R 777 /var/lib/nordvpn
