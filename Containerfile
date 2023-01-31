@@ -8,7 +8,9 @@ COPY etc /etc
 COPY ublue-firstboot /usr/bin
 
 RUN rpm-ostree install distrobox gnome-tweaks just \
-        zsh rclone sshfs && \
+        openssl gnome-shell-extension-gsconnect sshfs \
+        gnome-shell-extension-appindicator gnome-shell-extension-dash-to-dock
+        zsh rclone && \
     ostree container commit
 
 # RUN chmod -R 777 /var/lib/nordvpn
