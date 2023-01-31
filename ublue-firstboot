@@ -202,7 +202,7 @@ gnome-extensions-cli install 517
 
 rpm-ostree install -Ay virt-manager nordvpn microsoft-edge-dev
 sudo chmod -R 777 /var/lib/nordvpn
-sudo cp rsa-key-1.pub /var/lib/nordvpn/data/
+# sudo cp rsa-key-1.pub /var/lib/nordvpn/data/ # need to do this step manually
 sudo systemctl enable --now nordvpnd
 
 mkdir -p "$HOME"/.local/share/fonts/
