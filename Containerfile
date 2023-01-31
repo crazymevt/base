@@ -7,7 +7,8 @@ COPY etc /etc
 
 COPY ublue-firstboot /usr/bin
 
-RUN rpm-ostree install distrobox gnome-tweaks just && \
+RUN rpm-ostree install distrobox gnome-tweaks just \
+        nordvpn virt-managers && \
     ostree container commit
 
 # RUN chmod -R 777 /var/lib/nordvpn
