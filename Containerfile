@@ -7,10 +7,8 @@ COPY etc /etc
 
 COPY ublue-firstboot /usr/bin
 
-RUN mkdir -p /usr/local/lib && \
-    rpm-ostree install distrobox gnome-tweaks just \
+RUN rpm-ostree install distrobox gnome-tweaks just \
         openssl sshfs openrgb openrgb-udev-rules \
-        zsh rclone protonvpn libappindicator-gtk3 python3-pip && \
-    pip3 install gnome-extensions-cli && \
+        zsh rclone protonvpn libappindicator-gtk3 && \
     ostree container commit
 
