@@ -8,7 +8,7 @@ COPY etc /etc
 COPY ublue-firstboot /usr/bin
 
 RUN rpm-ostree install distrobox gnome-tweaks just \
-        zsh rclone wireguard-tools sshfs microsoft-edge-dev \
+        zsh rclone wireguard-tools microsoft-edge-dev \
         openssl openrgb openrgb-udev-rules protonvpn libappindicator-gtk3  && \
     ostree container commit
 
