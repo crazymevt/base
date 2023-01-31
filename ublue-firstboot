@@ -12,11 +12,6 @@ echo "00"
 
 echo "# Removing Filtered Flathub Repository"
 /usr/bin/flatpak remote-delete flathub --force ||:
-if [ "$?" != 0 ] ; then
-        zenity --error \
-          --text="Removing Filtered Flathub Repo Failed"
-        exit 1
-fi
 echo "3"
 
 echo "# Enabling Flathub Repository"
@@ -225,6 +220,9 @@ chmod +x appimaged-745-x86_64.AppImage
 
 curl -L https://github.com/marzeq/xbox-cloud-gaming-electron/releases/download/1.0.20/xbox-cloud-gaming-electron_1.0.20.AppImage -o xbox-cloud-gaming-electron_1.0.20.AppImage
 
+cd ~
+mkdir -p .plugins
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.plugins/powerlevel10k
 
 echo "100"
 
