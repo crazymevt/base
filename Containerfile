@@ -8,7 +8,7 @@ COPY etc /etc
 COPY ublue-firstboot /usr/bin
 
 RUN rpm-ostree install distrobox gnome-tweaks just \
-        openssl gnome-shell-extension-gsconnect sshfs \
+        openssl gnome-shell-extension-gsconnect sshfs openrgb openrgb-udev-rules \
         gnome-shell-extension-appindicator gnome-shell-extension-dash-to-dock \
         zsh rclone protonvpn && \
     ostree container commit
