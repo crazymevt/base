@@ -36,7 +36,7 @@ if [ "$?" != 0 ] ; then
           --text="Replacing Fedora Flatpaks Failed"
         exit 1
 fi
-echo "20"
+echo "10"
 
 echo "Removing all preinstalled Flatpaks"
 /usr/bin/flatpak remove --system --noninteractive --all ||:
@@ -53,58 +53,130 @@ if [ "$?" != 0 ] ; then
           --text="Removing Fedora Flatpak Repo Failed"
         exit 1
 fi
-echo "25"
+echo "15"
 
-echo "# Installing Firefox"
-/usr/bin/flatpak install --user --noninteractive flathub org.mozilla.firefox
+echo "# Installing Steam"
+/usr/bin/flatpak install --user --noninteractive flathub com.valvesoftware.Steam
 if [ "$?" != 0 ] ; then
         zenity --error \
-          --text="Installing Firefox Failed"
+          --text="Installing Steam Failed"
+        exit 1
+fi
+echo "20"
+
+echo "# Installing VLC"
+/usr/bin/flatpak install --user --noninteractive flathub org.videolan.VLC
+if [ "$?" != 0 ] ; then
+        zenity --error \
+          --text="Installing VLC Failed"
+        exit 1
+fi
+echo "25"
+
+echo "# Installing Snes9x"
+/usr/bin/flatpak install --user --noninteractive flathub com.snes9x.Snes9x
+if [ "$?" != 0 ] ; then
+        zenity --error \
+          --text="Installing Snes9x Failed"
         exit 1
 fi
 echo "30"
 
-echo "# Installing Thunderbird"
-/usr/bin/flatpak install --user --noninteractive flathub org.mozilla.Thunderbird
+echo "# Installing Nestopia"
+/usr/bin/flatpak install --user --noninteractive flathub ca._0ldsk00l.Nestopia
 if [ "$?" != 0 ] ; then
         zenity --error \
-          --text="Installing Thunderbird Failed"
+          --text="Installing Nestopia Failed"
+        exit 1
+fi
+echo "35"
+
+echo "# Installing Minecraft"
+/usr/bin/flatpak install --user --noninteractive flathub com.mojang.Minecraft
+if [ "$?" != 0 ] ; then
+        zenity --error \
+          --text="Installing Minecraft Failed"
         exit 1
 fi
 echo "40"
+
+echo "# Installing Bottles"
+/usr/bin/flatpak install --user --noninteractive flathub com.usebottles.bottles
+if [ "$?" != 0 ] ; then
+        zenity --error \
+          --text="Installing Bottles Failed"
+        exit 1
+fi
+echo "45"
+
+echo "# Installing Anydesk"
+/usr/bin/flatpak install --user --noninteractive flathub com.anydesk.Anydesk
+if [ "$?" != 0 ] ; then
+        zenity --error \
+          --text="Installing Anydesk Failed"
+        exit 1
+fi
+echo "50"
+
+echo "# Installing Heroic"
+/usr/bin/flatpak install --user --noninteractive flathub com.heroicgameslauncher.hgl
+if [ "$?" != 0 ] ; then
+        zenity --error \
+          --text="Installing Heroic Failed"
+        exit 1
+fi
+echo "55"
+
+echo "# Installing Ferdium"
+/usr/bin/flatpak install --user --noninteractive flathub org.ferdium.Ferdium
+if [ "$?" != 0 ] ; then
+        zenity --error \
+          --text="Installing Ferdium Failed"
+        exit 1
+fi
+echo "60"
+
+echo "# Installing ProtonUpQT"
+/usr/bin/flatpak install --user --noninteractive net.davidotek.pupgui2
+if [ "$?" != 0 ] ; then
+        zenity --error \
+          --text="Installing ProtonUpQT Failed"
+        exit 1
+fi
+echo "65"
+
+echo "# Installing VSCode"
+/usr/bin/flatpak install --user --noninteractive com.visualstudio.code
+if [ "$?" != 0 ] ; then
+        zenity --error \
+          --text="Installing VSCode Failed"
+        exit 1
+fi
+echo "70"
+
+echo "# Installing Emacs"
+/usr/bin/flatpak install --user --noninteractive org.gnu.emacs
+if [ "$?" != 0 ] ; then
+        zenity --error \
+          --text="Installing Emacs Failed"
+        exit 1
+fi
+echo "75"
+
+echo "# Installing appimagepool"
+/usr/bin/flatpak install --user --noninteractive io.github.prateekmedia.appimagepool
+if [ "$?" != 0 ] ; then
+        zenity --error \
+          --text="Installing appimagepool Failed"
+        exit 1
+fi
+echo "80"
 
 echo "# Installing Extension Manager"
 /usr/bin/flatpak install --user --noninteractive flathub com.mattjakeman.ExtensionManager
 if [ "$?" != 0 ] ; then
         zenity --error \
-          --text="Installing Extension Manager Failed"
-        exit 1
-fi
-echo "50"
-
-echo "# Installing LibreOffice"
-/usr/bin/flatpak install --user --noninteractive flathub org.libreoffice.LibreOffice
-if [ "$?" != 0 ] ; then
-        zenity --error \
-          --text="Installing LibreOffice Failed"
-        exit 1
-fi
-echo "70"
-
-echo "# Installing DejaDup Backup"
-/usr/bin/flatpak install --user --noninteractive flathub org.gnome.DejaDup
-if [ "$?" != 0 ] ; then
-        zenity --error \
-          --text="Installing DejaDup Failed"
-        exit 1
-fi
-echo "80"
-
-echo "# Installing Font Downloader"
-/usr/bin/flatpak install --user --noninteractive flathub org.gustavoperedo.FontDownloader
-if [ "$?" != 0 ] ; then
-        zenity --error \
-          --text="Installing FontDownloader Failed"
+          --text="Installing Extension Manager Failed Failed"
         exit 1
 fi
 echo "85"
@@ -118,13 +190,17 @@ if [ "$?" != 0 ] ; then
 fi
 echo "90"
 
-echo "# Installing Celluloid Media Player"
-/usr/bin/flatpak install --user --noninteractive flathub io.github.celluloid_player.Celluloid
-if [ "$?" != 0 ] ; then
-        zenity --error \
-          --text="Installing Celluloid Failed"
-        exit 1
-fi
+echo "# Installing Gnome Extensions"
+gnome-extensions-cli install 615
+gnome-extensions-cli install 1401
+gnome-extensions-cli install 307
+gnome-extensions-cli install 1319
+gnome-extensions-cli install 4308
+gnome-extensions-cli install 2182
+gnome-extensions-cli install 4099
+gnome-extensions-cli install 4977
+gnome-extensions-cli install 517
+
 echo "100"
 
 echo "# Reticulating Final Splines"

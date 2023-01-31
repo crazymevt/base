@@ -8,11 +8,8 @@ COPY etc /etc
 COPY ublue-firstboot /usr/bin
 
 RUN rpm-ostree install distrobox gnome-tweaks just \
-        openssl gnome-shell-extension-gsconnect sshfs openrgb openrgb-udev-rules \
-        gnome-shell-extension-appindicator gnome-shell-extension-dash-to-dock \
-        zsh rclone protonvpn libappindicator-gtk3 && \
+        openssl sshfs openrgb openrgb-udev-rules \
+        zsh rclone protonvpn libappindicator-gtk3 python3-pip && \
+    pip3 install gnome-extensions-cli && \
     ostree container commit
 
-# RUN chmod -R 777 /var/lib/nordvpn
-
-# COPY nordvpn /var/lib/nordvpn
