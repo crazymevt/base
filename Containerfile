@@ -8,7 +8,8 @@ COPY etc /etc
 COPY ublue-firstboot /usr/bin
 
 RUN rpm-ostree install distrobox gnome-tweaks just \
-        zsh && \
+        zsh rclone wireguard-tools sshfs microsoft-edge-dev \
+        openssl openrgb openrgb-udev-rules protonvpn libappindicator-gtk3  && \
     ostree container commit
 
 # RUN chmod -R 777 /var/lib/nordvpn
