@@ -18,7 +18,7 @@ The `latest` tag will automatically point to the latest build.
 
 ## Features
 
-- Start with a base Fedora Silverblue 37 image
+- Start with a base Fedora Silverblue 38 image
 - Removes Firefox from the base image
 - Adds the following packages to the base image:
   - distrobox and gnome-tweaks
